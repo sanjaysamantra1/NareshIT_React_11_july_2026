@@ -1,0 +1,48 @@
+Softwares to install
+=====================
+1. vscode editor : https://code.visualstudio.com/download
+
+2. NodeJS : https://nodejs.org/en/download
+
+
+
+Web Development
+===============
+-Developing website
+
+
+1. FrontEnd: User Interface ( Look & Feel )
+        HTML: Content ( button, inputbox, div, p, table, list )
+        CSS:  Styling ( border , color , background, margin, padding )
+        Bootstrap: CSS Library  ( pre-defined css classes )
+        Javascript: Dynamic pages, behaviour 
+        React: Javascript library 
+
+2. BackEnd: Develop REST APIs
+            urls like: https://fakestoreapi.com/products
+
+3. DataBase: Holds the data ( oracle, mysql, mongoDB, Postgre )
+
+
+
+Product list
+============
+1. Create an HTML File
+
+2. !  ( Emmet / shortcut ) add boilerplate code 
+   https://docs.emmet.io/cheat-sheet/
+
+3. Add HTML , CSS, Javascript code in product_list.html
+
+4. To Open/Run HTML File in Browser
+    a. install vscode extension ( live sever / open in browser)
+    b. alt+b  /  alt+shift+b
+  
+
+
+How to add/include Bootstrap in any HTML File
+=============================================
+add CDN Link of bootstrap in HTML file using <link>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
