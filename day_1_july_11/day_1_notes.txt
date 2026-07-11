@@ -46,3 +46,24 @@ add CDN Link of bootstrap in HTML file using <link>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
+
+
+Most Commonly Used Javascript Objects
+======================================
+console : log(), warn(), error(), table(), time(), timeEnd()
+document : write(), getElementById(), querySelector()
+window : alert(), confirm(), prompt(), atob(), btoa()
+Math :  max() , min()
+Array : push(), filter(), reduce()
+Object :  assign(), keys(), values()
+JSON :  stringify(), parse()
+
+
+alert() : Display Informative Message
+          Message + Ok
+
+confirm() : User Confirmation
+            Message + Ok(true)    cancel(false)
+
+prompt() : To Collect User Input 
+           inputbox + message + ok,cancel            
