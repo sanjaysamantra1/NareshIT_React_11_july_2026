@@ -1,0 +1,13 @@
+<script>
+    // primitives are compared by value
+    // non-primitives are compared by address/reference
+
+    console.log(10 == 10); // true, value comparision
+    console.log("react" == "react"); // true , value comparision
+
+    console.log({} == {});  // false , address comparision
+    console.log([10, 20] == [10, 20]);  // false , address comparision
+
+    console.log(null == null); // true , value comparision
+    // this proves that 'null' is a primitive value
+</script>

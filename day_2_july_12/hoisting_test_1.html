@@ -1,0 +1,11 @@
+<script>
+    console.log(`Global a is: ${a}`); // undefined - Hoisting
+    var a = 10;
+    function demo() {
+        console.log(`Function a is: ${a}`); // undefined - Hoisting
+        var a = 20;
+        console.log(`Function a is: ${a}`); // 20
+    }
+    demo();
+    console.log(`Global a is: ${a}`); // 10
+</script>

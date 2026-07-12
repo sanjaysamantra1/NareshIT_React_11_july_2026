@@ -1,0 +1,13 @@
+<script>
+    console.log('Global Code starts here...')
+    console.log(`a is: ${a}`);  // undefined, Hoisting
+    console.log(`b is:${b}`);   // error
+    console.log(`c is:${c}`);   // error
+    var a = 10;
+    let b = 20;
+    const c = 30;
+    console.log(`a is: ${a}`); // 10
+    console.log(`b is:${b}`);  // 20
+    console.log(`c is:${c}`);  // 30
+    console.log('Global Code ends here...')
+</script>

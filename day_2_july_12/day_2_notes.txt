@@ -1,0 +1,100 @@
+Datatypes
+=========
+1. Primitive
+        number:  5 , 5.4 , -2.3 , 8.11111
+        string:  'sachin' , "virat" , '10' , 'true'
+        boolean:  true , false
+        undefined: undefined
+        bigint: 
+        symbol:
+
+2. non-primitive
+        Object:  {}   []
+
+
+
+undefined vs null
+=================
+1. when a variables is declared without any value, it will have 'undefined' value assigned by javascript
+   null is a valid value assigned by developers
+
+2. typeof undefined value is 'undefined'
+   typeof null value if 'object'  , // its a bug from javascript
+
+
+
+variables
+=========
+-varibales are containers for storing data values.
+ variable is a name of the memory location
+-Variables in javascript can be declared using either one of the below 3 keywords:
+    1. var
+    2. let
+    3. const
+
+
+    var						let						 const
+======================================================================
+1.since begining		 1.ECMASCRIPT-6(2015)		1.ECMASCRIPT-6(2015)
+2.value can be changed   2.value can be changed     2.cann't be changed
+3.initialization is		 3.initialization is		3.mandatory
+	not mandatory           not mandatory	
+4.can be redeclared		 4.cann't be redeclared		4.cann't be redeclared
+5.function/global		 5.block/function/global	5.block/function/global
+6.TDZ - No			 	 6.TDZ - Yes				6.TDZ - Yes
+
+N:p - All variables (var,let,const) are hoisted but only 'var' variables are usable/reachable before initialization.
+-let/const variables are not reachable/usable before initialization (Temporal Dead Zone)
+
+
+javascript : Programming Language, Follows ECMASCRIPT Standards
+ECMA : European Computer Menufecturer Association
+ECMAScript : Set of standards 
+
+
+ES_5    Before June 2015
+ES_6    June 2015   ( let , const , class , extends , for-of, spread , REST)
+ES_7    2016
+ES_8    2017
+ES_9    2018
+.............
+ES_17   2026
+
+
+
+Variable Scope
+==============
+1. global
+2. function
+3. block
+
+
+
+How Javascript works
+=====================
+-we have 2 type of Execution Context
+     1. Global (anonymous) when Global code is executed
+     2. Function :  when a function is executed
+
+-Javascript code gets executed in 2 steps:
+    1. Memory Creation  (memory allocation happens for variables and functions)
+    2. Code Execution   (code gets executed line by line)
+
+
+
+Hoisting
+========
+-In Memory creation phase, javascript creates memory for all type of variables var/let/const
+-But, only for 'var' variables 'undefined' value is assigned, for let/const <value unavailable>
+-it allows us to use/access 'var' variables before the actual initialization, this is hoisting.
+
+
+
+Temporal Dead Zone
+==================
+-In Memory creation phase, javascript creates memory for all type of variables var/let/const
+-But, only for 'var' variables 'undefined' value is assigned, for let/const <value unavailable>
+-let/const variables can be accessed only after they are initialized with actual values
+-till the time they are not initialized, they cannot be used(even though they are there in memory)
+-the period when we can see the variables in memory but we cannot use them because they are not initialized
+ is called TDZ.

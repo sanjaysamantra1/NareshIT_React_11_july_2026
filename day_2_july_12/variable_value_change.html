@@ -1,0 +1,16 @@
+<script>
+    var a = 10;
+    let b = 20;
+    const c = 30;
+    console.log(`a is:${a}`)
+    console.log(`b is:${b}`)
+    console.log(`c is:${c}`)
+
+    a = 15;
+    b = 25;
+    console.log(`a is:${a}`)
+    console.log(`b is:${b}`)
+
+    c = 35; // Uncaught TypeError: Assignment to constant variable
+    console.log(`c is:${c}`)
+</script>

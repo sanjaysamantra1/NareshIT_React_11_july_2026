@@ -1,0 +1,15 @@
+<script>
+    // Scope chain
+    // if a variable is not declared in the current scope, it looks for that variable 
+    // in the outer scope
+
+    console.log(`Global a is: ${a}`); // undefined - Hoisting
+    var a = 10;
+    function demo() {
+        console.log(`Function a is: ${a}`); // 10 using the global variable
+        a = 20; // global variable became 20
+        console.log(`Function a is: ${a}`); // 20
+    }
+    demo();
+    console.log(`Global a is: ${a}`); // 20
+</script>

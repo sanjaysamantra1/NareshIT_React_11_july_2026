@@ -1,0 +1,25 @@
+<script>
+    function demo1() {
+        var a = 10;
+        console.log('inside function: ', a);
+    }
+    demo1();
+    // console.log('outside function: ', a); // No
+    // a 'var' variable declared inside a function is not accessible outside the function 
+    // this is expected
+
+
+    // var doesn't support block scope
+    function demo2() {
+        if (true) {
+            var b = 20;
+            console.log('inside block: ', b)
+        }
+        console.log('ouside block: ', b)
+    }
+    demo2();
+
+    // variable 'b' is declared inside a block
+    // ideally it shouldn't be visible outside the block
+    // but its accessible outside the block also
+</script>

@@ -1,0 +1,12 @@
+<script>
+    for (var i = 1; i <= 3; i++) {
+        console.log(`inside for loop i is:${i}`)
+    }
+    console.log(`outside for loop i is:${i}`)
+    console.log("=======================")
+
+    for (let j = 1; j <= 3; j++) {
+        console.log(`inside for loop j is:${j}`)
+    }
+    console.log(`outside for loop j is:${j}`); // Uncaught ReferenceError: j is not defined
+</script>
