@@ -58,3 +58,14 @@ Regular Function : this - how/where the function is invoked
 Arrow Function : this - where the function is written
 
 
+
+Closure
+=======
+-an inner function retains access to its outer function's variables.
+-outer functions will never have closure scope
+-inner functions will have closure scope only if inner fucntion is accessing out function variable
+
+
+usecase
+=======
+-Closure can be used for Data Encapsulation.

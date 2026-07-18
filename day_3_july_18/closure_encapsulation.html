@@ -1,0 +1,35 @@
+<script>
+    // No Encapsulation
+    let account = { accNo: 12345, accBal: 5000 };
+    console.log(account.accNo, account.accBal); // Read the data - yes
+    account.accBal = -3000;
+    console.log(account.accNo, account.accBal); // Read the data - yes
+
+
+    // Data Encapsulation = objects dont have access to other objects data directly
+    // Data Encapsulation = objects can access other objects data through member functions
+    // Data Encapsulation = Data(private) + Member Function(public)
+
+    function openAccount(initialAmt) {
+        let accNo = 112233;
+        let accBal = initialAmt;
+        return {
+            accInfo: function () {
+                console.log(`Account: ${accNo} has Balance: ${accBal}`);
+            },
+            deposit: function (amtToDeposit) {
+                if (amtToDeposit <= 0) {
+                    console.log(`Amount ${amtToDeposit} can not be deposited`)
+                } else {
+                    accBal = accBal + amtToDeposit;
+                    console.log(`After ${amtToDeposit} Deposit, Account: ${accNo} has Balance: ${accBal}`);
+                }
+            }
+        }
+    }
+    let encapsulatedAccount = openAccount(5000);
+    console.log(encapsulatedAccount); // encapsulatedAccount exposes only member functions
+    encapsulatedAccount.accInfo();
+    encapsulatedAccount.deposit(-4000);
+    encapsulatedAccount.deposit(4000);
+</script>
