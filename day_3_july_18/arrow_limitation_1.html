@@ -1,0 +1,18 @@
+<script>
+    // arrow functions should not be used as object methods
+    // if we use arrow functions inside object, this = window
+    let user = {
+        firstName: 'Sachin',
+        lastName: 'Tendulkar',
+        fullName1: function () {
+            console.log('FullName-1: ', this); // this = user
+            console.log(this.firstName, this.lastName);
+        },
+        fullName2: () => {
+            console.log('FullName-2: ', this); // this = window
+            console.log(this.firstName, this.lastName);
+        }
+    }
+    user.fullName1();
+    user.fullName2();
+</script>

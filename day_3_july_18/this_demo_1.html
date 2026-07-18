@@ -1,0 +1,22 @@
+<script>
+    // 1.
+    console.log('Global Scope: ', this); // this = Window
+
+    // 2.
+    let obj = {
+        f1: function () {
+            console.log('inside object method: ', this); // this = Obj
+        }
+    }
+    obj.f1();
+
+    //3.
+    class Student {
+        getName() {
+            console.log(this); // this = Student
+        }
+    }
+    let std = new Student();
+    std.getName();
+
+</script>

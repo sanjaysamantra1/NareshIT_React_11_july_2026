@@ -1,0 +1,21 @@
+<script>
+    // Function Declaration
+    add(100, 200);  // hoisting
+    function add(a, b) {
+        console.log(`Addition of ${a} and ${b} is ${a + b}`)
+    }
+    add(10, 20);
+
+    // Function expression
+    // sub(20,10);  // Cannot access 'sub' before initialization
+    let sub = function (a, b) { // anonymous
+        console.log(`Subtraction of ${a} and ${b} is ${a - b}`)
+    }
+    sub(20, 10);
+
+    // Arrow Function    ES_6   2015
+    let mul = (a, b) => {
+        console.log(`Multiplication of ${a} and ${b} is ${a * b}`)
+    }
+    mul(10, 20);
+</script>

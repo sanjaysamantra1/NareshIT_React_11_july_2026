@@ -1,0 +1,59 @@
+Functions 
+=========
+1. Pre-Defined : console.log(), alert(), document.write()
+2. User-Defined : we write , we use
+
+
+1. Function Declaration
+2. Function Expression
+3. Arrow Function
+
+
+Function Declaration vs Function Expression
+===========================================
+1. Function Declarations are named , Function Expressions are anonymous
+2. Function Declarations are hoisted , Function Expressions are not hoisted
+
+
+Arrow Function
+==============
+-Shorter in syntax
+-anonymous
+-are not hoisted
+-function keyword is not used
+-function body is optional
+-return keyword is optional
+
+
+Important Point about Arrow Function
+=====================================
+-How 'this' works with regular function , How 'this' works with Arrow function
+
+
+
+HigherOrder Function: A function that takes another function as arguement
+Callback Function: A function that is passed as arguement to another function
+
+in this example map() is higherorder and incrementBy5() is callback function
+
+    function incrementBy5(ele) {
+        return ele + 5;
+    }
+    let res1 = arr.map(incrementBy5);
+
+
+
+'this' keyword
+===============
+'this' refers to the object that is executing the current function
+
+
+Arrow Function Limitations
+==========================
+1. arrow functions should not be used as object methods
+
+
+Regular Function : this - how/where the function is invoked
+Arrow Function : this - where the function is written
+
+
