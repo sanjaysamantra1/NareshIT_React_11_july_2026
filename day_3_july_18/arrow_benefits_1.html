@@ -1,0 +1,25 @@
+<script>
+    class Student {
+        firstName = 'Sachin';
+        lastName = 'Tendulkar';
+        fullName1() {  // this = dynamic ( stdObj / window )
+            console.log('FullName-1: ', this);
+            console.log(this.firstName, this.lastName);
+        }
+        fullName2 = () => { // this = static (lexical scope) this=Student
+            console.log('FullName-2: ', this);
+            console.log(this.firstName, this.lastName);
+        }
+    }
+    let stdObj = new Student();
+
+    // Regular Function : this - how/where the function is invoked , answer is : stdObj
+    stdObj.fullName1(); // Sachin Tendulkar  (this=student)
+
+    // Arrow Function : this - where the function is written, answer is : Student Class
+    stdObj.fullName2(); // Sachin Tendulkar (this = Student)
+
+
+    setTimeout(stdObj.fullName1, 4000);
+    setTimeout(stdObj.fullName2, 8000);
+</script>

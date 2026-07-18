@@ -51,6 +51,7 @@ in this example map() is higherorder and incrementBy5() is callback function
 Arrow Function Limitations
 ==========================
 1. arrow functions should not be used as object methods
+2. 'this' is static when arrow functions used as event listeners
 
 
 Regular Function : this - how/where the function is invoked
