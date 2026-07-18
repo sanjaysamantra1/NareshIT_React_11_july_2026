@@ -1,0 +1,20 @@
+<script>
+    let arr = [20, 50, 10, 30, 40];
+    arr.sort();
+    console.log(arr);
+
+    let employees = [
+        { eId: 101, name: 'sanjay', sal: 5000, gender: 'male' },
+        { eId: 104, name: 'geeta', sal: 8000, gender: 'female' },
+        { eId: 103, name: 'sameer', sal: 7000, gender: 'male' },
+        { eId: 102, name: 'sita', sal: 9000, gender: 'female' },
+        { eId: 105, name: 'deepak', sal: 8000, gender: 'male' }
+    ];
+    // sort the employees by eId
+    // employees.sort()   No
+    employees.sort((emp1, emp2) => emp1.eId - emp2.eId); // Ascending order
+    console.log(employees)
+
+    employees.sort((emp1, emp2) => emp2.eId - emp1.eId); // Descending order
+    console.log(employees)
+</script>

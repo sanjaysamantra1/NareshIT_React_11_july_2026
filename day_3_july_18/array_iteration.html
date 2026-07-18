@@ -1,0 +1,26 @@
+<script>
+    let cars = ['Tata', 'Honda', 'Maruti', 'Hyundai'];
+
+    // 1. loop
+    for (let i = 0; i < cars.length; i++) {
+        console.log(cars[i]);
+    }
+    console.log("================");
+
+    // 2. for-in   ECMASCRIPT_6   2015
+    for (i in cars) { // i = 0/1/2/3
+        console.log(cars[i]);
+    }
+    console.log("================");
+
+    // 3. for-of   ECMASCRIPT_6   2015
+    for (car of cars) { // car = Tata/Honda/Maruti/Hyundai
+        console.log(car);
+    }
+    console.log("================");
+
+    // 4. forEach()
+    cars.forEach((val, ind, arr) => {
+        console.log(val, ind, arr);
+    })
+</script>
