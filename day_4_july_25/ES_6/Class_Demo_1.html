@@ -1,0 +1,21 @@
+<script>
+    // ES_5  constructor function
+    function Trainer(name, course, branch) {
+        this.name = name;
+        this.course = course;
+        this.branch = branch;
+    }
+    let trainer1 = new Trainer('Sanjay Kumar', 'ReactJS', 'Hyderabad');
+    console.log(trainer1);
+
+    // ES_6  class keyword
+    class Student {
+        constructor(roll, name, course) {
+            this.roll = roll;
+            this.name = name;
+            this.course = course;
+        }
+    }
+    let std1 = new Student(101, 'Prabhat Ranjan', 'ReactJS');
+    console.log(std1)
+</script>

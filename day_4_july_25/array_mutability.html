@@ -1,0 +1,13 @@
+<script>
+    const cars = ['Tata', 'Honda'];
+    cars.push('maruti');  // adding element - yes
+    delete cars[1];       // deleting element - yes
+    console.log(cars);  // ['Tata', empty, 'maruti']
+    // const is not enough to block all these operations on array
+
+    let fruits = ['Mango', 'Apple']
+    Object.freeze(fruits); // fruits array is frozen
+    fruits.push('orange');  // Cannot add property 2, object is not extensible
+    delete fruits[1];  
+    console.log(fruits);
+</script>

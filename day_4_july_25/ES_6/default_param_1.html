@@ -1,0 +1,22 @@
+<script>
+    function add(a, b, c) {
+        console.log(`Addition is: ${a + b + c}`)
+    }
+    add(10, 20); // NaN
+
+
+    // ES_5
+    function addition(a, b, c) {
+        a = a || 0;
+        b = b || 0;
+        c = c || 0;
+        console.log(`Addition is: ${a + b + c}`);
+    }
+    addition(10, 20);
+
+    // es_6
+    function sum(a, b, c = 0) {   //  0 is default value for param c
+        console.log(`Addition is: ${a + b + c}`);
+    }
+    addition(10, 20);
+</script>
