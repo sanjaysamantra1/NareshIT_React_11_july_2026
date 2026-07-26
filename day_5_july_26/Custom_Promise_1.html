@@ -1,0 +1,32 @@
+<script>
+    function add(a, b) { // Add function should return add result after 1 sec
+        let addResult;    // step-1
+
+        setTimeout(() => {
+            addResult = a + b;  // step-3
+        }, 1000);
+
+        return addResult; // step-2
+    }
+    console.log(add(10, 20));  // undefined
+
+
+    // create a custom promise that will return add result after 1 sec
+    function addition(a, b) {
+        let promiseObj = new Promise((resolve, reject) => {
+            if (!a || !b) {
+                reject('Plz Provide Both a & b values')
+            }
+            setTimeout(() => {
+                resolve(a + b);
+            }, 5000);
+        });
+        return promiseObj;
+    }
+    addition(100,200)  // consuming the promise
+        .then(result => {
+            console.log(`Result is ${result}`)
+        }).catch(err => {
+            console.log(err)
+        })
+</script>

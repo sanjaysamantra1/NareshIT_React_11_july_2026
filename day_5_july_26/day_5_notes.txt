@@ -123,3 +123,8 @@ console.log(planets); // { 'Mercury', 'Venus', 'Mars' }
 planets.clear();
 
 console.log(planets); // {}
+
+
+
+Promise
+=======
