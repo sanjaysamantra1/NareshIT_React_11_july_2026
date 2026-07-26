@@ -1,0 +1,11 @@
+<script>
+    function buy(name, product, price, qty ) {
+        qty = qty ?? 1;
+        console.log(`${name} bought ${qty} QTy  ${product} for price ${price}`)
+    }
+    buy('Prabhat', 'Laptop', 40000, null )
+
+    // default param value vs ??
+    // ?? use fallback only if the provide value is undefined/null
+    // default param use fallback if the provided value is any falsy value
+</script>

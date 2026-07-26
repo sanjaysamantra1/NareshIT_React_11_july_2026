@@ -1,0 +1,15 @@
+<script>
+    // ?.  optional Chaining   - Safer Deep Property Access
+
+    let user = { name: 'Sanjay', role: 'Trainer' };
+    console.log('Program Starts here...')
+
+    console.log(user.name);  // sanjay
+    console.log(user.email);  // undefined
+    console.log(user.dob);  // undefined
+    console.log(user.phone); // undefined, but error will not be thrown
+    // console.log(user.address.city); // error, stops program execution
+    console.log(user?.address?.city); // undefined, doesn't stop program execution
+
+    console.log('Program Ends here...')
+</script>
