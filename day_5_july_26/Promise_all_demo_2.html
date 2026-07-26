@@ -1,0 +1,21 @@
+<script>
+    // Promise.all() to call multiple APIs in parallel
+    async function fetch_data() {
+        let promiseArr = [
+            fetch('https://api.github.com/users/sanjaysamantra1'),
+            fetch('https://api.github.com/users/prabhatzgit'),
+            fetch('https://api.github.com/users/google')
+        ]
+        console.log(promiseArr);
+
+        let responseArr = await Promise.all(promiseArr);
+        console.log(responseArr);
+
+        let finalresponse = await Promise.all(responseArr.map(response => response.json()))
+        console.log(finalresponse)
+    }
+    fetch_data();
+
+    // if each request takes 1 sec, for this it will take 1 sec
+    // all3 requests are executed simultaneously
+</script>

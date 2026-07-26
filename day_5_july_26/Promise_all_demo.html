@@ -1,0 +1,18 @@
+<script>
+    async function fetch_data() {
+        let response1 = await fetch('https://api.github.com/users/sanjaysamantra1')
+        let sanjay_github_data = await response1.json()
+        console.log(sanjay_github_data)
+
+        let response2 = await fetch('https://api.github.com/users/prabhatzgit')
+        let prabaht_github_data = await response2.json()
+        console.log(prabaht_github_data)
+
+        let response3 = await fetch('https://api.github.com/users/google')
+        let google_github_data = await response3.json()
+        console.log(google_github_data)
+    }
+    fetch_data();
+
+    // if each request takes 1 sec, for this it will take 3 sec
+</script>
