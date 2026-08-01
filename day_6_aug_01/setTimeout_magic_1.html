@@ -1,0 +1,13 @@
+<script>
+    console.log('Normal Code starts...')
+
+    for (let i = 1; i <= 900000; i++) {  // sync code 
+        console.log(' For Loop: ', i);
+    }
+
+    setTimeout(() => {
+        console.log('I am setTimeout')
+    }, 3000); // async code, it doesn't ask normal code to wait
+
+    console.log('Normal Code ends...')
+</script>

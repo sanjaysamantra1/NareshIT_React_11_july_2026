@@ -1,0 +1,18 @@
+Event loop
+==========
+-javascript Event Loop allows to perform asynchronous operations even though it is single threaded.
+
+
+CallStack: maintains the execution contexts, executes them in LIFO Order
+
+Note: normal functions are added to callStack directly, but callback/async functions are not added to callstack directly, they have to wait
+
+Functions waiting in the below queues are executed only after normal functions are executed
+MicroTask Queue : promise callback, async , process.nexttick()
+MacroTask Queue : setTimeout, setInterval
+
+
+EventLoop : Keeps checking callstack, once callstack is free, assignes functions from queue to execute
+
+
+https://www.jsv9000.app/

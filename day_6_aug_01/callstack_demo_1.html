@@ -1,0 +1,18 @@
+<script>
+    // How callstack maintains multiple contexts
+    // Global Execution Context (anonymous) , f1 , f2
+    console.log('Global code starts here...')
+
+    function f2() {
+        console.log('f2 starts...')
+        console.log('f2 ends...')
+    }
+    function f1() {
+        console.log('f1 starts...')
+        f2()
+        console.log('f1 ends...')
+    }
+    f1()
+
+    console.log('Global code ends here...')
+</script>
