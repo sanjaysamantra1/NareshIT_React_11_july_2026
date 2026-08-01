@@ -36,4 +36,65 @@
         return { ...emp, comp: 'IBM' }
     })
     console.log('Employees with company: ', result6)
+
+
+    // 7. add Dept info for each employee
+    employeesArr = [{ eId: 101, name: "sanjay", sal: 5000, gender: "male" },
+    { eId: 104, name: "reena", sal: 8000, gender: "female" }]
+    departments = [{ eId: 101, dept: "sales" },
+    { eId: 104, dept: "marketing" }]
+
+    for (emp of employeesArr) {
+        let matchedDept = departments.find(dept => dept.eId === emp.eId);
+        if (matchedDept) {
+            emp.dept = matchedDept.dept;
+        }
+    }
+    console.log('Employees with Dept: ', employeesArr)
+
+
+    // 8. WAP to print the occurance of each elements 
+    let inputArr = [10, 20, 30, 40, 50, 10, 30, 50]
+    let resultObj = {};
+    for (ele of inputArr) {
+        if (resultObj[ele]) {
+            resultObj[ele] = resultObj[ele] + 1;
+        } else {
+            resultObj[ele] = 1;
+        }
+    }
+    console.log('occurance : ', resultObj);
+
+    // 9. declare array of employees & groupBy employees-name
+    let groupedEmployees = Object.groupBy(employees, (emp) => emp.name);
+    console.log('groupedEmployees: ', groupedEmployees)
+
+    // another solution for question-9
+    /* let groupedEmployees = {};
+    for (emp of employees) {
+        let empName = emp.name;
+        if (groupedEmployees[empName]) {
+            groupedEmployees[empName].push(emp)
+        } else {
+            groupedEmployees[empName] = [emp];
+        }
+    }
+    console.log('groupedEmployees: ', groupedEmployees) */
+
+
+    // 10. Find the total salary of all 'Male' employees 
+    let totalSalary = employees.filter(emp => emp.gender === 'male')
+        .reduce((sum, emp) => sum + emp.sal, 0);
+    console.log("Total Salary:", totalSalary);
+
+    // 11. Count employees by gender. ex:{male:2,female:3}
+    let genderCount = { male: 0, female: 0 }
+    for (emp of employees) {
+        if (emp.gender == 'male') {
+            genderCount.male = genderCount.male + 1;
+        } else {
+            genderCount.female = genderCount.female + 1;
+        }
+    }
+    console.log('genderCount: ', genderCount)
 </script>
