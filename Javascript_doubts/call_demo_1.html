@@ -1,0 +1,12 @@
+<script>
+    // call() apply() bind() are used to explicitely set value of 'this'
+    function add(a, b) {
+        console.log(this.num + a + b); // this = window
+    }
+    add(10, 20);  // undefined + 10 + 20 = NaN
+
+    let obj1 = { num: 5 };
+    add.call(obj1, 10, 20);  // 5  +  10 + 20 = 35
+    // call add() by passing 10,20 as params, this = obj1
+
+</script>

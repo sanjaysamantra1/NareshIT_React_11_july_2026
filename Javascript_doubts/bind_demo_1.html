@@ -1,0 +1,19 @@
+<script>
+    // bind() is sued to bind 'this' with a function and return a new function
+    class Student {
+        firstName = 'Sachin';
+        lastName = 'Tendulkar';
+        fullName1() {
+            console.log('FullName-1: ', this);
+            console.log(this.firstName, this.lastName);
+        }
+        fullName2 = () => {
+            console.log('FullName-2: ', this);
+            console.log(this.firstName, this.lastName);
+        }
+    }
+    let stdObj = new Student();
+
+    setTimeout(stdObj.fullName1, 2000);  // this = window   ,   undefined undefined
+    setTimeout(stdObj.fullName1.bind(stdObj), 2000);  // this = stdObj, Sachin Tendulkar
+</script>
