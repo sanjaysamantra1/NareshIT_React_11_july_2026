@@ -12,6 +12,7 @@ import Assignment4 from '../assignments/Assignment4'
 import Assignment5 from '../assignments/Assignment5'
 import Assignment6 from '../assignments/Assignment6'
 import Assignment7 from '../assignments/Assignment7'
+import ListDemo1 from '../list/ListDemo1'
 
 export default function Body() {
   return (
@@ -28,8 +29,9 @@ export default function Body() {
       {/* <Assignment3/> */}
       {/* <Assignment4/> */}
       {/* <Assignment5/> */}
-      <Assignment6/>
-      <Assignment7/>
+      {/* <Assignment6/>
+      <Assignment7/> */}
+      <ListDemo1/>
     </div>
   )
 }

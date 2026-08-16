@@ -1,0 +1,16 @@
+import React from 'react'
+
+export default function ListDemo1() {
+    const fruits = ["Apple", "Mango", "Orange", "Banana", 'Pineapple'];
+    return <>
+        <h3 className="text-center">List Demo 1</h3>
+        <hr />
+
+        <h4>Fruit List::</h4>
+        <ul>
+            {fruits.map((fruit, ind) => {
+                return <li>{fruit}</li>
+            })}
+        </ul>
+    </>
+}
