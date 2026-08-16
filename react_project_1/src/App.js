@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      {/* <Categories /> */}
+      <Categories />
       {/* <Carousel /> */}
       <Body />
       <Footer />
