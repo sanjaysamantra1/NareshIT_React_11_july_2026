@@ -13,10 +13,11 @@ import Assignment5 from '../assignments/Assignment5'
 import Assignment6 from '../assignments/Assignment6'
 import Assignment7 from '../assignments/Assignment7'
 import ListDemo1 from '../list/ListDemo1'
+import EmployeeList from '../list/EmployeeList'
 
 export default function Body() {
   return (
-    <div className="body" style={{ minHeight: "300px" }}>
+    <div className="body container" style={{ minHeight: "300px" }}>
       {/* Application Body */}
       {/* <CounterDemo1 /> */}
       {/* <CounterDemo2 /> */}
@@ -31,7 +32,8 @@ export default function Body() {
       {/* <Assignment5/> */}
       {/* <Assignment6/>
       <Assignment7/> */}
-      <ListDemo1/>
+      {/* <ListDemo1/> */}
+      <EmployeeList />
     </div>
   )
 }
