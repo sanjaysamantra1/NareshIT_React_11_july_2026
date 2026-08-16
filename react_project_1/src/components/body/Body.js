@@ -15,6 +15,7 @@ import Assignment7 from '../assignments/Assignment7'
 import ListDemo1 from '../list/ListDemo1'
 import EmployeeList from '../list/EmployeeList'
 import UserList from '../list/UserList'
+import ProductList from '../list/ProductList'
 
 export default function Body() {
   return (
@@ -35,7 +36,8 @@ export default function Body() {
       <Assignment7/> */}
       {/* <ListDemo1/> */}
       {/* <EmployeeList /> */}
-      <UserList/>
+      {/* <UserList/> */}
+      <ProductList/>
     </div>
   )
 }
