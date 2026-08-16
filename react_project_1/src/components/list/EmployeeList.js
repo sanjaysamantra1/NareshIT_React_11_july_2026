@@ -13,7 +13,7 @@ export default function EmployeeList() {
         <h3 className='text-center'>Employee List</h3>
         <table className='table table-bordered table-striped'>
             <tbody>
-                {employees.map((emp)=>{
+                {employees.map((emp) => {
                     return <tr key={emp.id}>
                         <td>{emp.id}</td>
                         <td>{emp.name}</td>
