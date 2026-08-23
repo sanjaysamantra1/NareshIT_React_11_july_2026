@@ -1,9 +1,10 @@
-import React,{useState} from 'react'
-import productArr from './product_data.js'
+import React, { useState } from 'react'
+import products from './product_data.js'
 import { FaStar } from 'react-icons/fa';
 import Swal from 'sweetalert2'
 import Snackbar from 'awesome-snackbar'
 import Modal from 'react-modal';
+import SearchBar from 'react-js-search';
 
 export default function ProductList() {
     // Code for Modal
@@ -20,15 +21,53 @@ export default function ProductList() {
         );
     }
 
+    // State data for products
+    const [productArr, setProductArr] = useState(products)
+    const [filteredProducts, setFilteredProducts] = useState(products);
+    const sortDesc = () => {
+        let sortedData = products.sort((p1, p2) => p2.price - p1.price);
+        setProductArr([...sortedData]);
+    }
+    const sortAsc = () => {
+        let sortedData = products.sort((p1, p2) => p1.price - p2.price);
+        setProductArr([...sortedData]);
+    }
+
+
+    // Search code
+    const onSearchClick = (searchText) => {
+        setFilteredProducts(
+            products.filter((emp) => JSON.stringify(emp).includes(searchText))
+        );
+    };
+    const onSearchTextChange = (searchText, filteredData) => {
+        setFilteredProducts(filteredData);
+    };
+
     return <>
         <h3 className='text-center'>Product List</h3>
-        <div className='col-sm-3'>
+        {/* <div className='col-sm-3'>
             <button className='btn btn-primary mx-1' onClick={openSweetAlert}>sweetalert</button>
             <button className='btn btn-success mx-1' onClick={openSnackBar}>snackbar</button>
             <button className='btn btn-secondary mx-1' onClick={openModal}>modal</button>
+        </div> */}
+        <div className='row'>
+            <div className='col-sm-8'>
+                {/* <input type='search' placeholder='Search...' className='form-control' /> */}
+                <SearchBar
+                    // onSearchTextChange={onSearchTextChange}
+                    onSearchButtonClick={onSearchClick}
+                    placeHolderText={"Search here..."}
+                    data={products}
+                />
+            </div>
+            <div className='col-sm-4'>
+                <button className='btn btn-primary mx-1' onClick={sortAsc}>Sort Asc</button>
+                <button className='btn btn-success' onClick={sortDesc}>Sort Desc</button>
+            </div>
         </div>
         <div className='row'>
-            {productArr.map(product => {
+            {filteredProducts.map(product => {
                 return <div className='col-3 my-2'>
                     <div class="card" >
                         <img src={product.image} class="card-img-top" alt="..." height={250} />
