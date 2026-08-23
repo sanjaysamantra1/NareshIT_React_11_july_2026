@@ -39,9 +39,9 @@ export default function Body() {
       {/* <ListDemo1/> */}
       {/* <EmployeeList /> */}
       {/* <UserList/> */}
-      {/* <ProductList/> */}
+      <ProductList/>
       {/* <TaskList/> */}
-      <CartList />
+      {/* <CartList /> */}
     </div>
   )
 }
