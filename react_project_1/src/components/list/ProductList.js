@@ -37,7 +37,7 @@ export default function ProductList() {
     // Search code
     const onSearchClick = (searchText) => {
         setFilteredProducts(
-            products.filter((emp) => JSON.stringify(emp).includes(searchText))
+            products.filter((prod) => JSON.stringify(prod).includes(searchText))
         );
     };
     const onSearchTextChange = (searchText, filteredData) => {
