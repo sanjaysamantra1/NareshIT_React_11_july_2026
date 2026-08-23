@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 import Snackbar from 'awesome-snackbar'
 import Modal from 'react-modal';
 import SearchBar from 'react-js-search';
+import ReactPaginate from 'react-paginate';
 
 export default function ProductList() {
     // Code for Modal
@@ -43,6 +44,7 @@ export default function ProductList() {
     const onSearchTextChange = (searchText, filteredData) => {
         setFilteredProducts(filteredData);
     };
+    
 
     return <>
         <h3 className='text-center'>Product List</h3>
@@ -86,6 +88,7 @@ export default function ProductList() {
                 </div>
             })}
         </div>
+
         <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
