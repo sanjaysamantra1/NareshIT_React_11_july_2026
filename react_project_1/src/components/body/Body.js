@@ -17,6 +17,7 @@ import EmployeeList from '../list/EmployeeList'
 import UserList from '../list/UserList'
 import ProductList from '../list/ProductList'
 import TaskList from '../list/TaskList'
+import CartList from '../list/CartList'
 
 export default function Body() {
   return (
@@ -39,7 +40,8 @@ export default function Body() {
       {/* <EmployeeList /> */}
       {/* <UserList/> */}
       {/* <ProductList/> */}
-      <TaskList/>
+      {/* <TaskList/> */}
+      <CartList />
     </div>
   )
 }
