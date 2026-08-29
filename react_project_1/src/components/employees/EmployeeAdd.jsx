@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function EmployeeAdd({ addEmployee }) {
-  const default_emp = {id:null,name:'',role:'',salary:null,status:'',gender:''}
+  const default_emp = {id:'',name:'',role:'',salary:'',status:'',gender:''}
   const [employee, setEmployee] = useState(default_emp);
 
   const handleChange = (event) => {
