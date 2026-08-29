@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import EmployeeTable from './EmployeeTable'
 import EmployeeAdd from './EmployeeAdd'
 import Snackbar from 'awesome-snackbar'
+import {EMPLOYEE_ADDED} from '../../constants/message_constants'
 
 export default function EmployeeCRUD() {
     const employeeArr = [
@@ -21,6 +22,10 @@ export default function EmployeeCRUD() {
             { position: 'top-center', theme: 'light', timeout: 5000, actionText: 'X' }
     );
   }
+  const addEmployee = (newEmp)=>{
+    setEmployees([...employees , newEmp]);
+    new Snackbar(EMPLOYEE_ADDED)
+  }
   return <>
     <h3 className="text-center">Employee CRUD</h3>
     <div className="row">
@@ -28,7 +33,7 @@ export default function EmployeeCRUD() {
             <EmployeeTable employees={employees} deleteEmployee={deleteEmployee} />
         </div>
         <div className="col-sm-4">
-            <EmployeeAdd />
+            <EmployeeAdd addEmployee={addEmployee} />
         </div>
     </div>
   </>
