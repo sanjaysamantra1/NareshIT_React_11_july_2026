@@ -19,6 +19,7 @@ import ProductList from '../list/ProductList'
 import TaskList from '../list/TaskList'
 import CartList from '../list/CartList'
 import Products from '../list/Products'
+import EventDemo1 from '../events/EventDemo1'
 
 export default function Body() {
   return (
@@ -40,10 +41,11 @@ export default function Body() {
       {/* <ListDemo1/> */}
       {/* <EmployeeList /> */}
       {/* <UserList/> */}
-      {/* <ProductList/> */}
+      <ProductList/>
       {/* <TaskList/> */}
       {/* <CartList /> */}
-      <Products />
+      {/* <Products /> */}
+      {/* <EventDemo1/> */}
     </div>
   )
 }

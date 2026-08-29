@@ -46,7 +46,7 @@ export default function ProductList() {
     };
     
 
-    return <>
+    return <div onContextMenu={(event)=>event.preventDefault()}>
         <h3 className='text-center'>Product List</h3>
         {/* <div className='col-sm-3'>
             <button className='btn btn-primary mx-1' onClick={openSweetAlert}>sweetalert</button>
@@ -98,5 +98,5 @@ export default function ProductList() {
             <h2>Hello Hiiiiiiiiiii</h2>
             <div>I am a modal</div>
         </Modal>
-    </>
+    </div>
 }

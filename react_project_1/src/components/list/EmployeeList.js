@@ -9,6 +9,10 @@ export default function EmployeeList() {
         { id: 5, name: 'Karan Singh', role: 'Manager', salary: 52000, status: 'Active', gender: 'male' },
         { id: 6, name: 'Neha Gupta', role: 'Tester', salary: 72000, status: 'Active', gender: 'female' }
     ];
+
+    const deleteEmployee = (id)=>{
+        console.log(`Employee with id ${id} is being deleted...`)
+    }
     return <>
         <h3 className='text-center'>Employee List</h3>
         <table className='table table-bordered table-striped'>
@@ -21,6 +25,9 @@ export default function EmployeeList() {
                         <td>{emp.gender}</td>
                         <td>{emp.salary}</td>
                         <td>{emp.status}</td>
+                        <td>
+                            <button onClick={()=>deleteEmployee(emp.id)} className="btn btn-danger">Delete</button>
+                        </td>
                     </tr>
                 })}
             </tbody>
