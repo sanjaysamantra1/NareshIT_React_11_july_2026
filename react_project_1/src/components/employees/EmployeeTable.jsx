@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function EmployeeTable({employees}) {
+export default function EmployeeTable({employees,deleteEmployee}) {
   return <>
         <h3 className='text-center'>Employee Table</h3>
         <table className='table table-bordered table-striped'>
@@ -14,7 +14,7 @@ export default function EmployeeTable({employees}) {
                         <td>{emp.salary}</td>
                         <td>{emp.status}</td>
                         <td>
-                            {/* <button onClick={()=>deleteEmployee(emp.id)} className="btn btn-danger">Delete</button> */}
+                            <button onClick={()=>deleteEmployee(emp.id)} className="btn btn-danger">Delete</button>
                         </td>
                     </tr>
                 })}
