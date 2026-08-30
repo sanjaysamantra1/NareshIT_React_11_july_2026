@@ -24,6 +24,7 @@ import EventDemo2 from '../events/EventDemo2'
 import FormDemo1 from '../form/FormDemo1'
 import EmployeeCRUD from '../employees/EmployeeCRUD'
 import UseEffectDemo1 from '../hooks/UseEffectDemo1'
+import DigitalClock from '../hooks/DigitalClock'
 
 export default function Body() {
   return (
@@ -53,7 +54,8 @@ export default function Body() {
       {/* <EventDemo2/> */}
       {/* <FormDemo1/> */}
       {/* <EmployeeCRUD/> */}
-      <UseEffectDemo1/>
+      {/* <UseEffectDemo1/> */}
+      <DigitalClock/>
     </div>
   )
 }
