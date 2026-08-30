@@ -1,51 +1,50 @@
 import { useMemo, useState } from 'react';
-import products from '../list/product_data'
+import products from '../list/product_data';
 
 export default function ProductSearch() {
   const [count, setCount] = useState(0);
-  const [productArr] = useState(products);
-  const [query,setQuery] = useState('');
-
-//   const filteredProducts = products.filter(product=>{
-//     console.log('Filtering the data...')
-//     return product.category.toLowerCase().includes(query.toLowerCase());
-//   })
-    const filteredProducts = useMemo(()=>{
-        console.log('Filtering the data...')
-        return products.filter(product=>{
-            return product.category.toLowerCase().includes(query.toLowerCase());
-        })
-    },[query])
-
-  return <>
-    <h3 className="text-center">Product List with Search functionality</h3>
-    <div className='row'>
-        <input value={query} onChange={e=>setQuery(e.target.value)} type="search" placeholder='Search...' className='col-sm-6 form-control' />
-        <div>Searched Text: {query}</div>
-
-       <div className='col-sm-2'>
-         <p>Count: {count}</p>
-        <button onClick={() => setCount(count + 1)}>increment</button>
-       </div>
-    </div>
-    <div className='row'>
-        {filteredProducts.map(product => {
-                    return <div className='col-3 my-2' key={product.id}>
-                        <div class="card" >
-                            <img src={product.image} class="card-img-top" alt="..." height={250} />
-                            <div class="card-body text-center">
-                                <h5 class="card-title">{product.category}</h5>
-                                <p class="card-text text-truncate">{product.title}</p>
-                                <p class="card-text text-truncate">{product.description}</p>
-                                <p class="card-text">Rs {product.price}</p>
-                                <p class="card-text">
-                                    {product.rating.rate}*
-                                </p>
-                                <a href="#" class="btn btn-primary">Details</a>
-                            </div>
-                        </div>
-                    </div>
-        })}        
-    </div>
-  </>
+  const [query, setQuery] = useState('');
+  /* const filteredProducts = useMemo(() => {
+    console.log('Filtering products data...');
+    return products.filter(product =>
+      product.description.toLowerCase().includes(query.toLowerCase())
+    );
+  }, [query]); */
+  const filteredProducts = products.filter(product =>{
+      console.log('Filtering products data...');
+      return product.description.toLowerCase().includes(query.toLowerCase())
+   });
+  return (
+    <>
+      <h3 className="text-center">Product List with Search Functionality</h3>
+      <div className="row">
+        <div className="col-sm-6">
+          <input value={query} onChange={e => setQuery(e.target.value)} type="search" placeholder="Search by category..." className="form-control" />
+          <p>Searched Text: <strong>{query}</strong></p>
+          <p>Products Found: <strong>{filteredProducts.length}</strong></p>
+        </div>
+        <div className="col-sm-2">
+          <p>Count: {count}</p>
+          <button onClick={() => setCount(count + 1)}>Increment</button>
+        </div>
+      </div>
+      <div className="row">
+        {filteredProducts.map(product => (
+          <div className="col-3 my-2" key={product.id}>
+            <div className="card">
+              <img src={product.image} className="card-img-top" alt={product.title} height={250} />
+              <div className="card-body text-center">
+                <h5 className="card-title">{product.category}</h5>
+                <p className="card-text text-truncate">{product.title}</p>
+                <p className="card-text text-truncate">{product.description}</p>
+                <p className="card-text">Rs {product.price}</p>
+                <p className="card-text">{product.rating.rate} ⭐</p>
+                <a href="#" className="btn btn-primary">Details</a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
 }
