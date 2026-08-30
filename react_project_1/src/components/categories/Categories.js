@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Children, useCallback, useState } from 'react'
 import CategoryItem from './CategoryItem';
 
 export default function Categories() {
@@ -18,17 +18,24 @@ export default function Categories() {
 
     const [count,setCount] = useState(0);
 
+    // const sayHi = ()=>{
+    //     console.log('Hiiiiiiii')
+    // }
+    const sayHi = useCallback(()=>{
+        console.log('Hiiiiiiii')
+    },[])
+
     return (
         <div className="container">
             <div className='row'>
                 {categories.map((categoryObj,ind)=>{
                     return <div className='col' key={ind}>
-                        <CategoryItem categoryObj={categoryObj} />
+                        <CategoryItem categoryObj={categoryObj} sayHi={sayHi} />
                     </div>
                 })}
             </div>
-            {/* <div>{count}</div>
-            <button onClick={()=>setCount(count+1)}>Increment</button> */}
+            <div>{count}</div>
+            <button onClick={()=>setCount(count+1)}>Increment</button>
         </div>
     )
 }

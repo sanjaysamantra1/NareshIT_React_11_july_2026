@@ -4,16 +4,18 @@ import products from '../list/product_data';
 export default function ProductSearch() {
   const [count, setCount] = useState(0);
   const [query, setQuery] = useState('');
-  /* const filteredProducts = useMemo(() => {
+
+  const filteredProducts = useMemo(() => {
     console.log('Filtering products data...');
     return products.filter(product =>
       product.description.toLowerCase().includes(query.toLowerCase())
     );
-  }, [query]); */
-  const filteredProducts = products.filter(product =>{
+  }, [query]);
+  
+  /* const filteredProducts = products.filter(product =>{
       console.log('Filtering products data...');
       return product.description.toLowerCase().includes(query.toLowerCase())
-   });
+   }); */
   return (
     <>
       <h3 className="text-center">Product List with Search Functionality</h3>
@@ -24,8 +26,9 @@ export default function ProductSearch() {
           <p>Products Found: <strong>{filteredProducts.length}</strong></p>
         </div>
         <div className="col-sm-2">
-          <p>Count: {count}</p>
-          <button onClick={() => setCount(count + 1)}>Increment</button>
+          <p>Count: {count} &nbsp;
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+          </p>
         </div>
       </div>
       <div className="row">

@@ -29,6 +29,7 @@ import UserDetails from '../hooks/UserDetails'
 import PureComponentDemo from '../state/PureComponentDemo'
 import UseMemo_Test from '../hooks/UseMemo_Test'
 import ProductSearch from '../hooks/ProductSearch'
+import Addition from '../form/Addition'
 
 export default function Body() {
   const [flag,setFlag] = useState(true);
@@ -65,7 +66,8 @@ export default function Body() {
       {/* <UserDetails/> */}
       {/* <PureComponentDemo/> */}
       {/* <UseMemo_Test/> */}
-      <ProductSearch/>
+      {/* <ProductSearch/> */}
+      <Addition/>
     </div>
   )
 }
