@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CounterDemo1 from '../counter/CounterDemo1'
 import CounterDemo2 from '../counter/CounterDemo2'
 import DatabindingDemo1 from '../databinding/DatabindingDemo1'
@@ -27,6 +27,7 @@ import UseEffectDemo1 from '../hooks/UseEffectDemo1'
 import DigitalClock from '../hooks/DigitalClock'
 
 export default function Body() {
+  const [flag,setFlag] = useState(true);
   return (
     <div className="body container" style={{ minHeight: "300px" }}>
       {/* Application Body */}
@@ -55,7 +56,8 @@ export default function Body() {
       {/* <FormDemo1/> */}
       {/* <EmployeeCRUD/> */}
       {/* <UseEffectDemo1/> */}
-      <DigitalClock/>
+      {flag ? <DigitalClock/> : null}
+      {/* <button onClick={()=>setFlag(!flag)}>Toggle</button> */}
     </div>
   )
 }
