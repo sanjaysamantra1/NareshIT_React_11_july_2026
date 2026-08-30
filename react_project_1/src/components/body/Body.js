@@ -26,6 +26,9 @@ import EmployeeCRUD from '../employees/EmployeeCRUD'
 import UseEffectDemo1 from '../hooks/UseEffectDemo1'
 import DigitalClock from '../hooks/DigitalClock'
 import UserDetails from '../hooks/UserDetails'
+import PureComponentDemo from '../state/PureComponentDemo'
+import UseMemo_Test from '../hooks/UseMemo_Test'
+import ProductSearch from '../hooks/ProductSearch'
 
 export default function Body() {
   const [flag,setFlag] = useState(true);
@@ -59,7 +62,10 @@ export default function Body() {
       {/* <UseEffectDemo1/> */}
       {/* {flag ? <DigitalClock/> : null} */}
       {/* <button onClick={()=>setFlag(!flag)}>Toggle</button> */}
-      <UserDetails/>
+      {/* <UserDetails/> */}
+      {/* <PureComponentDemo/> */}
+      {/* <UseMemo_Test/> */}
+      <ProductSearch/>
     </div>
   )
 }

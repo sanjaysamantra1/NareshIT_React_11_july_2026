@@ -23,7 +23,7 @@ export default function UserDetails() {
         <option value={2}>User 2</option>
         <option value={3}>User 3</option>
       </select>
-      <div className="card h-100">
+      <div className="card h-100 col-sm-3">
         <div className="card-body">
           <p>{user?.id}</p>
           <p>{user?.name}</p>

@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CategoryItem from './CategoryItem';
 
 export default function Categories() {
-    let categoryArr = [
+  let categoryArr = [
     { label: 'Grocery', img_url: 'https://rukminim2.flixcart.com/flap/72/72/image/29327f40e9c4d26b.png?q=100' },
     { label: 'Mobile', img_url: 'https://rukminim2.flixcart.com/flap/72/72/image/22fddf3c7da4c4f4.png?q=100' },
     { label: 'Fashion', img_url: 'https://rukminim2.flixcart.com/fk-p-flap/72/72/image/0d75b34f7d8fbcb3.png?q=100' },
@@ -13,15 +13,22 @@ export default function Categories() {
     { label: 'Beauty & Toys', img_url: 'https://rukminim2.flixcart.com/flap/72/72/image/dff3f7adcf3a90c6.png?q=100' },
     { label: 'Two Wheeler', img_url: 'https://rukminim2.flixcart.com/fk-p-flap/72/72/image/05d708653beff580.png?q=100' },
   ]
+    const [categories,setCategories] = useState(categoryArr);
+    console.log('Catgories Component rendered...');
+
+    const [count,setCount] = useState(0);
+
     return (
         <div className="container">
             <div className='row'>
-                {categoryArr.map((categoryObj,ind)=>{
+                {categories.map((categoryObj,ind)=>{
                     return <div className='col' key={ind}>
                         <CategoryItem categoryObj={categoryObj} />
                     </div>
                 })}
             </div>
+            {/* <div>{count}</div>
+            <button onClick={()=>setCount(count+1)}>Increment</button> */}
         </div>
     )
 }
