@@ -25,6 +25,7 @@ import FormDemo1 from '../form/FormDemo1'
 import EmployeeCRUD from '../employees/EmployeeCRUD'
 import UseEffectDemo1 from '../hooks/UseEffectDemo1'
 import DigitalClock from '../hooks/DigitalClock'
+import UserDetails from '../hooks/UserDetails'
 
 export default function Body() {
   const [flag,setFlag] = useState(true);
@@ -56,8 +57,9 @@ export default function Body() {
       {/* <FormDemo1/> */}
       {/* <EmployeeCRUD/> */}
       {/* <UseEffectDemo1/> */}
-      {flag ? <DigitalClock/> : null}
+      {/* {flag ? <DigitalClock/> : null} */}
       {/* <button onClick={()=>setFlag(!flag)}>Toggle</button> */}
+      <UserDetails/>
     </div>
   )
 }
