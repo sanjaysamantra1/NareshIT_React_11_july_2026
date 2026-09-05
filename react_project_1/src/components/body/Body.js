@@ -32,6 +32,7 @@ import ProductSearch from '../hooks/ProductSearch'
 import Addition from '../form/Addition'
 import RegistrationForm from '../form/RegistrationForm'
 import SignUpForm from '../form/SignUpForm'
+import ProductListHttp from '../http/ProductListHttp'
 
 export default function Body() {
   const [flag,setFlag] = useState(true);
@@ -71,7 +72,8 @@ export default function Body() {
       {/* <ProductSearch/> */}
       {/* <Addition/> */}
       {/* <RegistrationForm/> */}
-      <SignUpForm/>
+      {/* <SignUpForm/> */}
+      <ProductListHttp/>
     </div>
   )
 }
