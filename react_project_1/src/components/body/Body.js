@@ -31,6 +31,7 @@ import UseMemo_Test from '../hooks/UseMemo_Test'
 import ProductSearch from '../hooks/ProductSearch'
 import Addition from '../form/Addition'
 import RegistrationForm from '../form/RegistrationForm'
+import SignUpForm from '../form/SignUpForm'
 
 export default function Body() {
   const [flag,setFlag] = useState(true);
@@ -69,7 +70,8 @@ export default function Body() {
       {/* <UseMemo_Test/> */}
       {/* <ProductSearch/> */}
       {/* <Addition/> */}
-      <RegistrationForm/>
+      {/* <RegistrationForm/> */}
+      <SignUpForm/>
     </div>
   )
 }
