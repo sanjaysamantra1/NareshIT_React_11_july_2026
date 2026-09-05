@@ -6,7 +6,7 @@ export default function RegistrationForm() {
         lastName: 'Kohli',
         email: 'Virat@gmail.com',
         country: 'IN',
-        gender : 'male'
+        gender: 'male'
     }
 
     const [user, setUser] = useState(userObj);
@@ -15,11 +15,19 @@ export default function RegistrationForm() {
         const { name, value } = event.target;
         setUser({ ...user, [name]: value })
     }
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('Form Submitted...')
+        console.log(user)
+    }
+    const hanldeReset = (event) => {
+        setUser({...userObj});
+    }
     return <>
         <h3 className="text-center">Registration Form</h3>
 
         <div className="col-sm-4 offset-4 border border-3 rounded-3 p-3">
-            <form action="">
+            <form onSubmit={handleSubmit} onReset={hanldeReset}>
                 <p>
                     FirstName:
                     <input name="firstName" value={user.firstName} onChange={handleChange} />
@@ -43,13 +51,14 @@ export default function RegistrationForm() {
                 </p>
                 <p>
                     Gender:
-                    <input id="male" type="radio" name="gender" value="male" checked={user.gender=='male'} onChange={handleChange} />
-                    <label for="male">Male</label> &nbsp;
+                    <input id="male" type="radio" name="gender" value="male" checked={user.gender == 'male'} onChange={handleChange} />
+                    <label htmlFor="male">Male</label> &nbsp;
 
-                    <input id="female" type="radio" name="gender" value="female" checked={user.gender=='female'} onChange={handleChange} />
-                    <label for="female">Female</label>
+                    <input id="female" type="radio" name="gender" value="female" checked={user.gender == 'female'} onChange={handleChange} />
+                    <label htmlFor="female">Female</label>
                 </p>
-
+                
+                <button type="reset" className='mx-2'>Reset</button>
                 <button type="submit">Submit</button>
             </form>
 
