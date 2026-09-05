@@ -10,10 +10,12 @@ export default function RegistrationForm() {
     }
 
     const [user, setUser] = useState(userObj);
+    const [errors, setErrors] = useState({});
 
     const handleChange = (event) => {
         const { name, value } = event.target;
-        setUser({ ...user, [name]: value })
+        setUser({ ...user, [name]: value });
+        setErrors({...errors, [name]:value.trim() === "" ? `${name} is required`: "",})
     }
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -31,14 +33,17 @@ export default function RegistrationForm() {
                 <p>
                     FirstName:
                     <input name="firstName" value={user.firstName} onChange={handleChange} />
+                    <div className="text-danger">{errors.firstName}</div>
                 </p>
                 <p>
                     LastName:
                     <input name="lastName" value={user.lastName} onChange={handleChange} />
+                    <div className="text-danger">{errors.lastName}</div>
                 </p>
                 <p>
                     Email:
                     <input type='email' name="email" value={user.email} onChange={handleChange} />
+                    <div className="text-danger">{errors.email}</div>
                 </p>
                 <p>
                     Country:
