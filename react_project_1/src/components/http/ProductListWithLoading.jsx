@@ -1,27 +1,16 @@
 import React, { useEffect, useState } from 'react'
 
-export default function ProductListHttp() {
+export default function ProductListWithLoading() {
     const [productArr, setProductArr] = useState([]);
-
-    useEffect(() => {
-        fetchProducts();
-    }, []);
-
-    // const fetchProducts = () => {
-    //     fetch('https://fakestoreapi.com/products').then(response => {
-    //         response.json().then(productArr => {
-    //             setProductArr([...productArr])
-    //         })
-    //     }).catch(err => {
-    //         console.log(err)
-    //     })
-    // };
+    const [isLoading, setIsLoading] = useState(false);
 
     const fetchProducts = async () => {
+        setIsLoading(true);
         try {
             let response = await fetch('https://fakestoreapi.com/products');
             let productArr = await response.json();
-            setProductArr([...productArr])
+            setProductArr([...productArr]);
+            setIsLoading(false);
         } catch (err) {
             console.log(err);
         }
@@ -29,7 +18,11 @@ export default function ProductListHttp() {
 
     return <>
         <h3 className="text-center">Product List Using HTTP</h3>
+        <button className="btn btn-primary" onClick={fetchProducts}>Fetch Products</button>
 
+        {
+        isLoading?
+            <h1>Loading...</h1> :
         <div className='row'>
             {productArr.map(product => {
                 return <div className='col-3 my-2' key={product.id}>
@@ -49,5 +42,6 @@ export default function ProductListHttp() {
                 </div>
             })}
         </div>
+        }
     </>
 }

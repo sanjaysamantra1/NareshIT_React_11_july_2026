@@ -33,6 +33,7 @@ import Addition from '../form/Addition'
 import RegistrationForm from '../form/RegistrationForm'
 import SignUpForm from '../form/SignUpForm'
 import ProductListHttp from '../http/ProductListHttp'
+import ProductListWithLoading from '../http/ProductListWithLoading'
 
 export default function Body() {
   const [flag,setFlag] = useState(true);
@@ -73,7 +74,8 @@ export default function Body() {
       {/* <Addition/> */}
       {/* <RegistrationForm/> */}
       {/* <SignUpForm/> */}
-      <ProductListHttp/>
+      {/* <ProductListHttp/> */}
+      <ProductListWithLoading/>
     </div>
   )
 }
