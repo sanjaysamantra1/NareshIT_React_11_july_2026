@@ -34,9 +34,12 @@ import RegistrationForm from '../form/RegistrationForm'
 import SignUpForm from '../form/SignUpForm'
 import ProductListHttp from '../http/ProductListHttp'
 import ProductListWithLoading from '../http/ProductListWithLoading'
+import UserListHttp from '../http/UserListHttp'
+import CommentListHttp from '../http/CommentListHttp'
+import PhotoList from '../http/PhotoList'
 
 export default function Body() {
-  const [flag,setFlag] = useState(true);
+  const [flag, setFlag] = useState(true);
   return (
     <div className="body container" style={{ minHeight: "300px" }}>
       {/* Application Body */}
@@ -75,7 +78,10 @@ export default function Body() {
       {/* <RegistrationForm/> */}
       {/* <SignUpForm/> */}
       {/* <ProductListHttp/> */}
-      <ProductListWithLoading/>
+      {/* <ProductListWithLoading/> */}
+      {/* <UserListHttp/> */}
+      <PhotoList/>
+      <CommentListHttp />
     </div>
   )
 }
