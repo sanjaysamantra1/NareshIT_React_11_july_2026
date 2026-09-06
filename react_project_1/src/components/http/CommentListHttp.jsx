@@ -6,7 +6,7 @@ export default function CommentListHttp() {
 
     const fetchComments = async () => {
         try {
-            const response = await client.get('/omments');
+            const response = await client.get('/comments');
             setCommentArr(response.data);
         }catch(err){
             console.log(err)
