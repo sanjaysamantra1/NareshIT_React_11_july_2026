@@ -37,6 +37,8 @@ import ProductListWithLoading from '../http/ProductListWithLoading'
 import UserListHttp from '../http/UserListHttp'
 import CommentListHttp from '../http/CommentListHttp'
 import PhotoList from '../http/PhotoList'
+import ProductListQueryParam from '../http/ProductListQueryParam'
+import ParallelApiCalls from '../http/ParallelApiCalls'
 
 export default function Body() {
   const [flag, setFlag] = useState(true);
@@ -80,8 +82,10 @@ export default function Body() {
       {/* <ProductListHttp/> */}
       {/* <ProductListWithLoading/> */}
       {/* <UserListHttp/> */}
-      <PhotoList/>
+      {/* <PhotoList/> */}
       <CommentListHttp />
+      {/* <ProductListQueryParam/> */}
+      {/* <ParallelApiCalls/> */}
     </div>
   )
 }
