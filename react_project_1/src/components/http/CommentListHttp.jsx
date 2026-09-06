@@ -5,8 +5,12 @@ export default function CommentListHttp() {
     const [commentArr, setCommentArr] = useState([]);
 
     const fetchComments = async () => {
-        const response = await client.get('/comments');
-        setCommentArr(response.data);
+        try {
+            const response = await client.get('/omments');
+            setCommentArr(response.data);
+        }catch(err){
+            console.log(err)
+        }
     }
     useEffect(() => {
         console.log(commentArr)
