@@ -44,6 +44,8 @@ import ShoppingCart from '../interview/ShoppingCart'
 import StarRating from '../interview/StarRating'
 import VirtualizedList from '../interview/VirtualizedList'
 import OTP_Form from '../interview/OTP_Form'
+import FolderExplorer from '../interview/FolderExplorer'
+import jsonData from '../interview/folder_data.json'
 
 export default function Body() {
   const [flag, setFlag] = useState(true);
@@ -95,7 +97,8 @@ export default function Body() {
       {/* <Autocomplete/> */}
       {/* <ShoppingCart/> */}
       {/* <VirtualizedList/> */}
-      <OTP_Form/>
+      {/* <OTP_Form/> */}
+      <FolderExplorer folderInfo={jsonData} />
     </div>
   )
 }
