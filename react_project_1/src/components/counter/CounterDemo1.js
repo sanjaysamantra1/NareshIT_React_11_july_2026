@@ -1,6 +1,7 @@
 import MyReact, { useState } from 'react'
+import WithLogger from '../HOC/WithLogger';
 
-export default function CounterDemo1() {
+function CounterDemo1() {
     const [count, setCount] = useState(0);
     const increment = (event) => {
         console.log(event.type)
@@ -19,6 +20,7 @@ export default function CounterDemo1() {
         </div>
     </>
 }
+export default WithLogger(CounterDemo1);
 
 /* 
    h1 - HTML Tag

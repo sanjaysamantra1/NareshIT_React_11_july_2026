@@ -52,7 +52,7 @@ export default function Body() {
   return (
     <div className="body container" style={{ minHeight: "300px" }}>
       {/* Application Body */}
-      {/* <CounterDemo1 /> */}
+      <CounterDemo1 />
       {/* <CounterDemo2 /> */}
       {/* <DatabindingDemo1 /> */}
       {/* <DatabindingDemo2 /> */}
@@ -98,7 +98,7 @@ export default function Body() {
       {/* <ShoppingCart/> */}
       {/* <VirtualizedList/> */}
       {/* <OTP_Form/> */}
-      <FolderExplorer folderInfo={jsonData} />
+      {/* <FolderExplorer folderInfo={jsonData} /> */}
     </div>
   )
 }
