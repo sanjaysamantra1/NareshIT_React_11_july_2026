@@ -43,6 +43,7 @@ import Autocomplete from '../interview/AutoComplete'
 import ShoppingCart from '../interview/ShoppingCart'
 import StarRating from '../interview/StarRating'
 import VirtualizedList from '../interview/VirtualizedList'
+import OTP_Form from '../interview/OTP_Form'
 
 export default function Body() {
   const [flag, setFlag] = useState(true);
@@ -90,10 +91,11 @@ export default function Body() {
       {/* <CommentListHttp /> */}
       {/* <ProductListQueryParam/> */}
       {/* <ParallelApiCalls/> */}
-      <StarRating/>
+      {/* <StarRating/> */}
       {/* <Autocomplete/> */}
       {/* <ShoppingCart/> */}
       {/* <VirtualizedList/> */}
+      <OTP_Form/>
     </div>
   )
 }
