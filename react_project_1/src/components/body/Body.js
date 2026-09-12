@@ -39,6 +39,10 @@ import CommentListHttp from '../http/CommentListHttp'
 import PhotoList from '../http/PhotoList'
 import ProductListQueryParam from '../http/ProductListQueryParam'
 import ParallelApiCalls from '../http/ParallelApiCalls'
+import Autocomplete from '../interview/AutoComplete'
+import ShoppingCart from '../interview/ShoppingCart'
+import StarRating from '../interview/StarRating'
+import VirtualizedList from '../interview/VirtualizedList'
 
 export default function Body() {
   const [flag, setFlag] = useState(true);
@@ -83,9 +87,13 @@ export default function Body() {
       {/* <ProductListWithLoading/> */}
       {/* <UserListHttp/> */}
       {/* <PhotoList/> */}
-      <CommentListHttp />
+      {/* <CommentListHttp /> */}
       {/* <ProductListQueryParam/> */}
       {/* <ParallelApiCalls/> */}
+      <StarRating/>
+      {/* <Autocomplete/> */}
+      {/* <ShoppingCart/> */}
+      {/* <VirtualizedList/> */}
     </div>
   )
 }
