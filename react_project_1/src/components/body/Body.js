@@ -54,6 +54,9 @@ import NotFound from '../routing/NotFound'
 import { Routes, Route } from 'react-router'
 import UserDetail from '../routing/UserDetail'
 import ProductDetails from '../routing/ProductDetails'
+import PermanentJobs from '../routing/PermanentJobs'
+import ContractJobs from '../routing/ContractJobs'
+import UploadVideos from '../routing/UploadVideos'
 
 export default function Body() {
   const [flag, setFlag] = useState(true);
@@ -111,12 +114,17 @@ export default function Body() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/aboutus" element={<AboutUs />}></Route>
-        <Route path="/careers" element={<Careers />}></Route>
+        <Route path="/careers" element={<Careers />}>
+            <Route index element={<PermanentJobs />}></Route>
+            <Route path="/careers/permanent" element={<PermanentJobs />}></Route>
+            <Route path="/careers/contract" element={<ContractJobs />}></Route>
+        </Route>
         <Route path="/contactus" element={<ContactUs />}></Route>
         <Route path="/products" element={<Products />}></Route>
         <Route path="/productdetails" element={<ProductDetails />} />
         <Route path="/users" element={<UserList />}></Route>
         <Route path="/userdetail/:id" element={<UserDetail />} />
+        <Route path="/upload" element={<UploadVideos />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
