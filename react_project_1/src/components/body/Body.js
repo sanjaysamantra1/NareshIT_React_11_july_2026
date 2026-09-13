@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { lazy, Suspense, useState } from 'react'
 import CounterDemo1 from '../counter/CounterDemo1'
 import CounterDemo2 from '../counter/CounterDemo2'
 import DatabindingDemo1 from '../databinding/DatabindingDemo1'
@@ -18,7 +18,7 @@ import UserList from '../list/UserList'
 import ProductList from '../list/ProductList'
 import TaskList from '../list/TaskList'
 import CartList from '../list/CartList'
-import Products from '../list/Products'
+// import Products from '../list/Products' // Eager Loading Import 
 import EventDemo1 from '../events/EventDemo1'
 import EventDemo2 from '../events/EventDemo2'
 import FormDemo1 from '../form/FormDemo1'
@@ -57,6 +57,10 @@ import ProductDetails from '../routing/ProductDetails'
 import PermanentJobs from '../routing/PermanentJobs'
 import ContractJobs from '../routing/ContractJobs'
 import UploadVideos from '../routing/UploadVideos'
+import ProtectedRoute from '../routing/ProtectedRoute'
+
+// Use Dynamic import for the component 
+const Products = lazy(() => import('../list/Products'))
 
 export default function Body() {
   const [flag, setFlag] = useState(true);
@@ -110,23 +114,29 @@ export default function Body() {
       {/* <VirtualizedList/> */}
       {/* <OTP_Form/> */}
       {/* <FolderExplorer folderInfo={jsonData} /> */}
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/home" element={<Home />}></Route>
-        <Route path="/aboutus" element={<AboutUs />}></Route>
-        <Route path="/careers" element={<Careers />}>
+      <Suspense fallback={<h2>Loading...</h2>}>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/home" element={<Home />}></Route>
+          <Route path="/aboutus" element={<AboutUs />}></Route>
+          <Route path="/careers" element={<Careers />}>
             <Route index element={<PermanentJobs />}></Route>
             <Route path="/careers/permanent" element={<PermanentJobs />}></Route>
             <Route path="/careers/contract" element={<ContractJobs />}></Route>
-        </Route>
-        <Route path="/contactus" element={<ContactUs />}></Route>
-        <Route path="/products" element={<Products />}></Route>
-        <Route path="/productdetails" element={<ProductDetails />} />
-        <Route path="/users" element={<UserList />}></Route>
-        <Route path="/userdetail/:id" element={<UserDetail />} />
-        <Route path="/upload" element={<UploadVideos />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+          </Route>
+          <Route path="/contactus" element={<ContactUs />}></Route>
+          <Route path="/products" element={<Products />}></Route>
+          <Route path="/productdetails" element={<ProductDetails />} />
+          <Route path="/users" element={<UserList />}></Route>
+          <Route path="/userdetail/:id" element={<UserDetail />} />
+          <Route path="/upload" element={
+            <ProtectedRoute>
+              <UploadVideos />
+            </ProtectedRoute>
+          } />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </div>
   )
 }

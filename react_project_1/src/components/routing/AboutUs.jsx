@@ -1,4 +1,7 @@
+import { lazy } from "react";
 import { Link, useNavigate } from "react-router"
+// import Heavy from "./Heavy";
+const Heavy = lazy(() => import('./Heavy'));
 
 export default function AboutUs() {
     const navigate = useNavigate();
@@ -16,5 +19,8 @@ export default function AboutUs() {
 
         <button onClick={() => navigate(-1)}>Go Back</button>
         <button onClick={() => navigate(1)}>Go Next</button>
+        <hr/>
+
+        <Heavy/>
     </>
 }

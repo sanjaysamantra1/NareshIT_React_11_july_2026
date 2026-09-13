@@ -36,14 +36,14 @@ export default function Products() {
             <div className="row">
                 {filteredProducts.map((product) => (
                     <div className="col-sm-3" key={product.id}>
-                        <div class="card" >
-                            <img src={product.image} class="card-img-top" alt="..." height={250} />
-                            <div class="card-body text-center">
-                                <h5 class="card-title">{product.category}</h5>
-                                <p class="card-text text-truncate">{product.title}</p>
-                                <p class="card-text text-truncate">{product.description}</p>
-                                <p class="card-text">Rs {product.price}</p>
-                                <p class="card-text">
+                        <div className="card" >
+                            <img src={product.image} className="card-img-top" alt="..." height={250} />
+                            <div className="card-body text-center">
+                                <h5 className="card-title">{product.category}</h5>
+                                <p className="card-text text-truncate">{product.title}</p>
+                                <p className="card-text text-truncate">{product.description}</p>
+                                <p className="card-text">Rs {product.price}</p>
+                                <p className="card-text">
                                     {product.rating.rate}
                                 </p>
                                 <button className="btn btn-secondary" onClick={() => {

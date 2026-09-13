@@ -1,4 +1,4 @@
-import MyReact, { useState } from 'react'
+import React, { useState } from 'react'
 import WithLogger from '../HOC/WithLogger';
 
 function CounterDemo1() {
@@ -16,7 +16,7 @@ function CounterDemo1() {
         <button onClick={increment}><span>Increment</span></button>
 
         <div className="border border-3 rounded-3 m-3 p-3">
-            <h4>React version:: {MyReact.version}</h4>
+            <h4>React version:: {React.version}</h4>
         </div>
     </>
 }

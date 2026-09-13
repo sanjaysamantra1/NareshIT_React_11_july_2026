@@ -71,18 +71,18 @@ export default function ProductList() {
         <div className='row'>
             {filteredProducts.map(product => {
                 return <div className='col-3 my-2'>
-                    <div class="card" >
-                        <img src={product.image} class="card-img-top" alt="..." height={250} />
-                        <div class="card-body text-center">
-                            <h5 class="card-title">{product.category}</h5>
-                            <p class="card-text text-truncate">{product.title}</p>
-                            <p class="card-text text-truncate">{product.description}</p>
-                            <p class="card-text">Rs {product.price}</p>
-                            <p class="card-text">
+                    <div className="card" >
+                        <img src={product.image} className="card-img-top" alt="..." height={250} />
+                        <div className="card-body text-center">
+                            <h5 className="card-title">{product.category}</h5>
+                            <p className="card-text text-truncate">{product.title}</p>
+                            <p className="card-text text-truncate">{product.description}</p>
+                            <p className="card-text">Rs {product.price}</p>
+                            <p className="card-text">
                                 {product.rating.rate}
                                 <FaStar color='gold' />
                             </p>
-                            <a href="#" class="btn btn-primary">Details</a>
+                            <a href="#" className="btn btn-primary">Details</a>
                         </div>
                     </div>
                 </div>
