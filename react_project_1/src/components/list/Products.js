@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import productsArr from './product_data.js'
 import ReactPaginate from "react-paginate";
 import "./products.css"
+import { createSearchParams, useNavigate } from 'react-router';
 
 export default function Products() {
     const [itemOffset, setItemOffset] = useState(0);
@@ -18,6 +19,14 @@ export default function Products() {
             `User requested page number ${event.selected}, which is offset ${newOffset}`
         );
         setItemOffset(newOffset);
+    };
+
+    const navigate = useNavigate();
+    const navigateHandler = (id, title, price, category) => {
+        navigate({
+            pathname: "/productdetails",
+            search: `?${createSearchParams({ id, title, price, category })}`,
+        });
     };
 
     return <>
@@ -37,7 +46,9 @@ export default function Products() {
                                 <p class="card-text">
                                     {product.rating.rate}
                                 </p>
-                                <a href="#" class="btn btn-primary">Details</a>
+                                <button className="btn btn-secondary" onClick={() => {
+                                    navigateHandler(product.id, product.title, product.price, product.category);
+                                }}>details</button>
                             </div>
                         </div>
                     </div>

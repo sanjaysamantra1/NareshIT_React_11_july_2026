@@ -46,13 +46,21 @@ import VirtualizedList from '../interview/VirtualizedList'
 import OTP_Form from '../interview/OTP_Form'
 import FolderExplorer from '../interview/FolderExplorer'
 import jsonData from '../interview/folder_data.json'
+import Home from '../routing/Home'
+import AboutUs from '../routing/AboutUs'
+import Careers from '../routing/Careers'
+import ContactUs from '../routing/ContactUs'
+import NotFound from '../routing/NotFound'
+import { Routes, Route } from 'react-router'
+import UserDetail from '../routing/UserDetail'
+import ProductDetails from '../routing/ProductDetails'
 
 export default function Body() {
   const [flag, setFlag] = useState(true);
   return (
     <div className="body container" style={{ minHeight: "300px" }}>
       {/* Application Body */}
-      <CounterDemo1 />
+      {/* <CounterDemo1 /> */}
       {/* <CounterDemo2 /> */}
       {/* <DatabindingDemo1 /> */}
       {/* <DatabindingDemo2 /> */}
@@ -99,6 +107,18 @@ export default function Body() {
       {/* <VirtualizedList/> */}
       {/* <OTP_Form/> */}
       {/* <FolderExplorer folderInfo={jsonData} /> */}
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/home" element={<Home />}></Route>
+        <Route path="/aboutus" element={<AboutUs />}></Route>
+        <Route path="/careers" element={<Careers />}></Route>
+        <Route path="/contactus" element={<ContactUs />}></Route>
+        <Route path="/products" element={<Products />}></Route>
+        <Route path="/productdetails" element={<ProductDetails />} />
+        <Route path="/users" element={<UserList />}></Route>
+        <Route path="/userdetail/:id" element={<UserDetail />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   )
 }

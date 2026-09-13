@@ -3,11 +3,14 @@ import { useEffect } from "react";
 export default function WithLogger(InputComponent) {
     return function EnhancedComponent(props) {
         useEffect(() => {
-            console.log(`${InputComponent.name} mounted`);
+            console.log(`Component ${InputComponent.name} mounted.`);
             return () => {
-                console.log(`${InputComponent.name} unmounted`);
+                console.log(`Component ${InputComponent.name} unmounted.`);
             };
         }, []);
+        useEffect(() => {
+            console.log(`Component ${InputComponent.name} updated.`);
+        });
         console.log(`${InputComponent.name} rendered`);
         return <InputComponent {...props} />;
     };
