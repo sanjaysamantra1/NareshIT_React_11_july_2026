@@ -30,12 +30,6 @@
     "eject": "react-scripts eject",
     "lint": "eslint ."
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -49,9 +43,6 @@
     ]
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "eslint": "^9.39.5",
-    "eslint-plugin-react": "^7.37.5",
     "globals": "^17.12.0"
   }
 }
