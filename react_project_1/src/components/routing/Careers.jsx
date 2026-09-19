@@ -11,7 +11,7 @@ export default function Careers() {
         userContext.setLoggedinUser('Sanjay')
     }
     const updateTheme = () => {
-        themeContext.toggleTheme('dark')
+        themeContext.toggleTheme()
     }
     return <>
         <h1 className="text-center">This is Careers Component</h1>
