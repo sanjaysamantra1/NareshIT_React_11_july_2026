@@ -4,13 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router'
+import { UserProvider } from './utils/userContext';
+import { ThemeProvider } from './utils/themeContext';
 
 // renders the App component into the root container.
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <UserProvider>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
