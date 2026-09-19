@@ -104,7 +104,7 @@ export default function Body() {
       {/* <ProductListHttp/> */}
       {/* <ProductListWithLoading/> */}
       {/* <UserListHttp/> */}
-      <PhotoList/>
+      {/* <PhotoList/> */}
       {/* <CommentListHttp /> */}
       {/* <ProductListQueryParam/> */}
       {/* <ParallelApiCalls/> */}
