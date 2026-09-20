@@ -25,7 +25,7 @@ const reducer = (state, action) => {
     }
 };
 
-export default function ToDoList() {
+export default function ToDoList_UseReducer() {
     const [todoArr, dispatch] = useReducer(reducer, initialTodos);
     const myref1 = useRef();
 
