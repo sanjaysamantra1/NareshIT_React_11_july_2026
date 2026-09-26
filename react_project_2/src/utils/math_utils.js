@@ -16,3 +16,8 @@ export function sumOfDigits(num) {
     }
     return sum;
 }
+
+export const cars = ['Tata', 'Honda']
+export function addNewCar(newCar) {
+    cars.push(newCar);
+}
