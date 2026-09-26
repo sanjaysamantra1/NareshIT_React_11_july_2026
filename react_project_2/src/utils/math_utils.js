@@ -21,3 +21,11 @@ export const cars = ['Tata', 'Honda']
 export function addNewCar(newCar) {
     cars.push(newCar);
 }
+
+export function even_odd(num) {
+    if (num % 2 == 0) {
+        return 'even';
+    } else {
+        return 'odd';
+    }
+}
