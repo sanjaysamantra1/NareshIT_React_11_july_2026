@@ -7,21 +7,18 @@ describe("CounterDemo1", () => {
         render(<CounterDemo1 />);
         expect(screen.getByText("Count:0")).toBeInTheDocument();
     });
-
     it("should increment the count", () => {
         render(<CounterDemo1 />);
         const incrementButton = screen.getByRole("button", { name: "Increment" });
         fireEvent.click(incrementButton);
         expect(screen.getByText("Count:1")).toBeInTheDocument();
     });
-
     it("should decrement the count", () => {
         render(<CounterDemo1 />);
         const decrementButton = screen.getByRole("button", { name: "Decrement" });
         fireEvent.click(decrementButton);
         expect(screen.getByText("Count:-1")).toBeInTheDocument();
     });
-
     it("should increment and decrement correctly", () => {
         render(<CounterDemo1 />);
         const incrementButton = screen.getByRole("button", { name: "Increment" });
@@ -29,6 +26,7 @@ describe("CounterDemo1", () => {
         fireEvent.click(incrementButton);
         expect(screen.getByText("Count:1")).toBeInTheDocument();
         fireEvent.click(incrementButton);
+        expect(screen.getByText("Count:2")).toBeInTheDocument();
         fireEvent.click(decrementButton);
         expect(screen.getByText("Count:1")).toBeInTheDocument();
         fireEvent.click(decrementButton);
