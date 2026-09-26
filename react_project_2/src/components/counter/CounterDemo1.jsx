@@ -6,7 +6,7 @@ export default function CounterDemo1() {
         <h3>Counter Example</h3>
 
         <button className="btn btn-danger" onClick={() => setCount(count - 1)}>Decrement</button>
-        <h2 className='mx-2'>{count}</h2>
+        <h2 className='mx-2'>Count:{count}</h2>
         <button className="btn btn-primary" onClick={() => setCount(count + 1)}>Increment</button>
     </div>
 }
