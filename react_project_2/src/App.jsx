@@ -3,6 +3,7 @@ import Counter from './components/counter/Counter'
 import CounterDemo1 from './components/counter/CounterDemo1'
 import EmployeeList from './components/employeeList/EmployeeList'
 import ToDoList from './components/todoRedux/ToDoList'
+import UserList from './components/userlist/UserList'
 
 function App() {
   return <>
@@ -10,7 +11,8 @@ function App() {
     {/* <Counter/> */}
     {/* <ToDoList /> */}
     {/* <EmployeeList/> */}
-    <CounterDemo1/>
+    {/* <CounterDemo1/> */}
+    <UserList/>
   </>
 }
 
