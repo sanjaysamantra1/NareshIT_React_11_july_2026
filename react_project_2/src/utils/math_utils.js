@@ -12,7 +12,7 @@ export function sumOfDigits(num) {
     while (num != 0) {
         rem = num % 10;
         sum = sum + rem;
-        num = num / 10;
+        num = Math.floor(num / 10);
     }
     return sum;
 }
