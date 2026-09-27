@@ -3,6 +3,7 @@ import Counter from './components/counter/Counter'
 import CounterDemo1 from './components/counter/CounterDemo1'
 import CountryList from './components/countrylist/CountryList'
 import EmployeeList from './components/employeeList/EmployeeList'
+import EmployeeList_GraphQL from './components/employeeList/EmployeeList_GraphQL'
 import ToDoList from './components/todoRedux/ToDoList'
 import UserList from './components/userlist/UserList'
 
@@ -14,7 +15,8 @@ function App() {
     {/* <EmployeeList/> */}
     {/* <CounterDemo1/> */}
     {/* <UserList/> */}
-    <CountryList/>
+    {/* <CountryList/> */}
+    <EmployeeList_GraphQL/>
   </>
 }
 

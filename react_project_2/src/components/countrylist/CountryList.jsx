@@ -4,14 +4,13 @@ import { useQuery } from '@apollo/client/react';
 
 const get_countries_query = gql`
     query CountryList {
-  countries{
-    code
-    name
-    capital
-    currency
-  }
-}
-  `;
+        countries(filter: { name: { regex: "^A" } }){
+            code
+            name
+            capital
+            currency
+        }
+    }`;
 
 export default function CountryList() {
     const { loading, error, data } = useQuery(get_countries_query);
@@ -23,13 +22,21 @@ export default function CountryList() {
         <h3 className="text-center">CountryList</h3>
 
         <table className="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Capital</th>
+                    <th>Currency</th>
+                </tr>
+            </thead>
             <tbody>
-                {data.countries.map(user => {
-                    return <tr>
-                        <td>{user.code}</td>
-                        <td>{user.name}</td>
-                        <td>{user.capital}</td>
-                        <td>{user.currency}</td>
+                {data.countries.map(country => {
+                    return <tr key={country.code}>
+                        <td>{country.code}</td>
+                        <td>{country.name}</td>
+                        <td>{country.capital}</td>
+                        <td>{country.currency}</td>
                     </tr>
                 })}
             </tbody>
